@@ -1,0 +1,22 @@
+name: Android APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Comprobar proyecto
+        run: |
+          echo "Proyecto Cita TIE Barcelona"
+          echo "Preparación del entorno terminada"
